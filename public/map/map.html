@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Food Oasis</title>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore-compat.js"></script>
+    
+
+    <link rel="stylesheet" href="map.css">
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="groceryStoresList">
+      <h2>Nearby Grocery Stores:</h2>
+      <p>Click to expand</p>
+      <ul id="list"></ul>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS95Z9r-h3s2CNDp6ugTKdjjm2wmi6cAA&libraries=places&callback=initMap" async defer></script>
+    <script src="map.js"></script>
+  </body>
+</html>

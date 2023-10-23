@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Food Oasis</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css" />
+
+  <script type="text/javascript">
+    // FirebaseUI config.
+    const firebaseConfig = {
+      apiKey: "AIzaSyCS95Z9r-h3s2CNDp6ugTKdjjm2wmi6cAA",
+      authDomain: "food-oasis-8fb7a.firebaseapp.com",
+      databaseURL: "https://food-oasis-8fb7a-default-rtdb.firebaseio.com",
+      projectId: "food-oasis-8fb7a",
+      storageBucket: "food-oasis-8fb7a.appspot.com",
+      messagingSenderId: "376961100739",
+      appId: "1:376961100739:web:d577cb74df3bb08b176b76",
+      measurementId: "G-LDRHY9JG5L"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+
+    var uiConfig = {
+      signInSuccessUrl: 'https://food-oasis-8fb7a.web.app/map/map.html',
+      signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+      ],
+      // tosUrl and privacyPolicyUrl accept either url string or a callback
+      // function.
+      // Terms of service url/callback.
+      tosUrl: '<your-tos-url>',
+      // Privacy policy url/callback.
+      privacyPolicyUrl: function() {
+        window.location.assign('<your-privacy-policy-url>');
+      }
+    };
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+</head>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--Things left to do:
+    Background images: explained in the header
+    Setting up the databases: i have firebase all set up-
+    for this app but i haven't linked everything yet, will do-       on sunday
+    Overall design stuff: new font, i like the background color-
+    but we can change it, if possible nicer looking login info       boxes, aligning the email and password box
+    i thought the fade ins were kind of like a mirage in a-           desert since its food oasis and all, we can change it or get-     rid of it, i don't really care that much.
+    Filling in the about me section
+-->
+<html>
+<head>
+  <title>Food Oasis</title>
+</head>
+<body>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  <header>
+    <div style="text-align:center;">
+      <!--i really want to add high def pictures of fresh groceries behind the title, like a slideshow, i'll get the images, if i haven't done it myself just remind me and i'll send them to you -->
+    <h1 class ="fade-in-text">Food Oasis</h1>
+    <h2 class ="fade-in-text-slow">Track grocery prices near you.
+    </h2>
+      <div class ="fade-in-text-really-slow">
+      <h2>Sign up or sign in to get started</h2>
+      <form>
+        <div id="firebaseui-auth-container"></div>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class ="fade-in-text-really-slow">
+      <button type ="button" class ="collapsible">What is food oasis?</button>
+      <div class="hidden">
+        <p>This is the about me section for food oasis</p>
+      </div>
+        </div
+    </section>
+  </main>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
+
+</body>
+</html>
